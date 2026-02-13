@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html  # Apache 기본 웹 루트도 동일합니다.
+hooks:
+  AfterInstall:
+    - location: scripts/restart_httpd.sh # 스크립트 이름을 httpd에 맞게 변경
+      timeout: 60
+      runas: root
